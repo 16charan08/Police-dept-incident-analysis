@@ -20,4 +20,6 @@ main.py contains all function calls for each functionality \
 After cloning repository, main.py is executed by following command in SSH 
 > pipenv run python project0/main.py --incidents url \
 By giving url of certain incident file here it will fetch all incidents and will store in 'normanpd.db' database
- 
+
+#### project0--p0.py
+
