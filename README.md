@@ -15,8 +15,7 @@ import pytest
 
 #### project0--main.py
 main.py contains all function calls for each functionality \
-For fetching incident.pdf
-###### p0.fetchincidents(url) 
+For fetching incident.pdf <b> p0.fetchincidents(url) <\b>
 For fetching incidents as data frame from above downloaded pdf
 ###### incidents = p0.extractincidents() 
 Creating Database 
