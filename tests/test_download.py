@@ -8,7 +8,7 @@ def test_fetchincidents():
     cwd = os.getcwd()
     print(cwd)
     try:
-         assert open('../incidents.pdf', 'rb')
+         assert open('./incidents.pdf', 'rb')
          print("Incidents files created")
     except:
         print("No file exsisted with that name; please try to execute main.py")
