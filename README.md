@@ -15,7 +15,7 @@ import pytest
 
 #### project0--main.py
 main.py contains all function calls for each functionality \
- ** p0.fetchincidents(url) ,incidents = p0.extractincidents() ,db = p0.createdb() ,p0.populatedb(db, incidents) ,p0.status(db) **
+ **p0.fetchincidents(url) ,incidents = p0.extractincidents() ,db = p0.createdb() ,p0.populatedb(db, incidents) ,p0.status(db)**
 
 After cloning repository, main.py is executed by following command in SSH 
 > pipenv run python project0/main.py --incidents url \
