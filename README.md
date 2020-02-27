@@ -5,8 +5,8 @@ In this project a PDF file is downloaded from the Norman Police Deparatment and 
 Screenshot of tree here
 
 ### Packages installed/used 
-pipenv install PyPDF2 &nbsp; /
-pipenv install pandas &nbsp; /
+pipenv install PyPDF2 &nbsp; \
+pipenv install pandas &nbsp; \
 pipenv install wget &nbsp;
 import sqlite3 \n
 import re \n
