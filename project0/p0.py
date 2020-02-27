@@ -80,7 +80,8 @@ def populatedb(db, incidents):
 def status(db):
     cursor = db.cursor()
     cursor.execute('''select nature,count(nature) from incidents group by nature''')
-    print(cursor.fetchall())
+    for row in cursor.fetchall():
+        print(row[0] + '|' , row[1])
     return
 
 
