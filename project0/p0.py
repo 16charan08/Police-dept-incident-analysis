@@ -13,15 +13,15 @@ def fetchincidents(url):
 
     file = os.listdir(cwd)
     #print(file)
-    if os.path.exists("./docs/incidents.pdf"):
-        os.remove("./docs/incidents.pdf")
-        wget.download(url,'./docs/incidents.pdf')
+    if os.path.exists("./incidents.pdf"):
+        os.remove("./incidents.pdf")
+        wget.download(url,'./incidents.pdf')
     else:
-        wget.download(url,'./docs/incidents.pdf')
+        wget.download(url,'./incidents.pdf')
     #wget.download(url, '/incidents.pdf')
 def extractincidents():
     cwd = os.getcwd()  # Get the current working directory (cwd)
-    pdfFileObj = open('./docs/incidents.pdf', 'rb')
+    pdfFileObj = open('./incidents.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
    # print()
     df = []
