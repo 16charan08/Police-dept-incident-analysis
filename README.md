@@ -15,7 +15,7 @@ import pytest
 
 #### project0--main.py
 main.py contains all function calls for each functionality \
-For fetching incident.pdf\
+For fetching incident.pdf
 ###### p0.fetchincidents(url) 
 For fetching incidents as data frame from above downloaded pdf
 ###### incidents = p0.extractincidents() 
@@ -25,4 +25,4 @@ Inserting Data into Database
 ###### p0.populatedb(db, incidents) 
 Fetching results
 ###### p0.status(db) 
-After cloning repository, main.py is executed by following command in SSH \
+After cloning repository, main.py is executed by following command in SSH 
