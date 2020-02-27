@@ -5,12 +5,12 @@ In this project a PDF file is downloaded from the Norman Police Deparatment and 
 Screenshot of tree here
 
 ### Packages installed/used 
-pipenv install PyPDF2
-pipenv install pandas
-pipenv install wget
-import sqlite3
-import re
-import pytest
-
+pipenv install PyPDF2 \n
+pipenv install pandas \n
+pipenv install wget \n
+import sqlite3 \n
+import re \n
+import pytest \n
+ 
 
 #### project0--main.py
