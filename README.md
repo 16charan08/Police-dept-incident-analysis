@@ -26,4 +26,3 @@ Inserting Data into Database
 Fetching results
 ###### p0.status(db) 
 After cloning repository, main.py is executed by following command in SSH \
-pipenv run python project0/main.py --incidents <url>
