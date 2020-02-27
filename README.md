@@ -19,7 +19,7 @@ main.py contains all function calls for each functionality \
 , <b> incidents = p0.extractincidents() 
 , <b> db = p0.createdb() 
 , <b> p0.populatedb(db, incidents) 
-, <b> p0.status(db) <>\
+, <b> p0.status(db) <\>
 
 After cloning repository, main.py is executed by following command in SSH 
 > pipenv run python project0/main.py --incidents <url>
