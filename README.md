@@ -15,8 +15,8 @@ import pytest \
 
 #### project0--main.py
 main.py contains all function calls for each functionality \
-p0.fetchincidents(url) #for fetching data \
-incidents = p0.extractincidents() \
-db = p0.createdb() \
-p0.populatedb(db, incidents) \
-p0.status(db) \
+###### p0.fetchincidents(url) \
+###### incidents = p0.extractincidents() \
+###### db = p0.createdb() \
+###### p0.populatedb(db, incidents) \
+###### p0.status(db) \
