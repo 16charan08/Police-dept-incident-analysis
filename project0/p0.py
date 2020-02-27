@@ -7,30 +7,21 @@ import pandas as pd
 import wget
 import re
 
-def create_connection(db_file):
-    """ create a database connection to a SQLite database """
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
-    except Error as e:
-        print(e)
-    finally:
-        if conn:
-            conn.close()
-
-
 def fetchincidents(url):
     cwd = os.getcwd()  # Get the current working directory (cwd)
     print(cwd)
 
     file = os.listdir(cwd)
     #print(file)
-    wget.download(url, cwd +'incidents.pdf')
-
+    if os.path.exists("./docs/incidents.pdf"):
+        os.remove("./docs/incidents.pdf")
+        wget.download(url,'./docs/incidents.pdf')
+    else:
+        wget.download(url,'./docs/incidents.pdf')
+    #wget.download(url, '/incidents.pdf')
 def extractincidents():
     cwd = os.getcwd()  # Get the current working directory (cwd)
-    pdfFileObj = open(cwd +'incidents.pdf', 'rb')
+    pdfFileObj = open('./docs/incidents.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
    # print()
     df = []
@@ -52,24 +43,21 @@ def extractincidents():
     return df
 
 def createdb():
-    # Create a database in RAM
-
-    db = sqlite3.connect(':memory:')
-    # Creates or opens a file called mydb with a SQLite3 DB
-    db = sqlite3.connect('normanpd.db')
-
-    # Get a cursor object
-    cursor = db.cursor()
-    cursor.execute('''DROP TABLE IF EXISTS arrests''')
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS incidents(incident_time TEXT,
-    incident_number TEXT,
-    incident_location TEXT,
-    nature TEXT,
-    incident_ori TEXT)
-    ''')
-    db.commit()
-
+    try:
+        sqlite3.connect(':memory:')
+        db = sqlite3.connect('normanpd.db')
+        cursor = db.cursor()
+        cursor.execute('''DROP TABLE IF EXISTS incidents''')
+        cursor.execute('''
+                CREATE TABLE IF NOT EXISTS incidents(incident_time TEXT,
+            incident_number TEXT,
+            incident_location TEXT,
+            nature TEXT,
+            incident_ori TEXT)
+            ''')
+        db.commit()
+    except Error as e:
+        print(e)
     return db
 
 def populatedb(db, incidents):
