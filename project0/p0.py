@@ -28,6 +28,8 @@ def extractincidents():
     for i in range(pdfReader.numPages):
         pageObj = pdfReader.getPage(i).extractText()
         pageObj = re.sub(';',' ',pageObj)
+        pageObj = re.sub('~-',' ',pageObj)
+        pageObj = re.sub('~', ' ', pageObj)
         pageObj = pageObj.replace('OK0140200\n','OK0140200;').replace('Incident ORI\n','Incident ORI;').\
                   replace('14005\n','14005;').replace('EMSSTAT\n','EMSSTAT;').replace(' \n',' ')
         text = pageObj.split(";")
