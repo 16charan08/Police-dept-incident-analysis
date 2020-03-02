@@ -37,7 +37,7 @@ This function takes arugument url which is passed in main function. This url is 
  <br/> \
 **step2:-**  \
 **_Assumptions made in this step are_** \
-    *Incident ORI* column having only 3 values that are used to detect end of each line(OK0140200,14005,EMSSTAT). \
+   1. *Incident ORI* column having only 3 values that are used to detect end of each line(OK0140200,14005,EMSSTAT). \
  After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.
 
 
