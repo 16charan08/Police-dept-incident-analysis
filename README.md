@@ -98,3 +98,5 @@ The dbInsert function takes two arguments which are the database name from dbCre
  ### setup.py and setup.cfg
 The setup.py file is required for finding the packages within the project during the execution. It finds the packages automatically.The setup.cfg file is required for running the pytest command to perform tests on the program.
 
+### test_all.py
+
