@@ -40,6 +40,7 @@ This function takes arugument url which is passed in main function. This url is 
 **_Assumptions made in this step are:-_** *Incident ORI* column having only 3 values that are used to detect end of each line(*OK0140200,14005,EMSSTAT*). \
 After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.\
 > *pageObj = pdfReader.getPage(n).extractText()* 
+Every ';' ,'~-','~' are replaced by space(' ') in order to handle latitude and longitude locations.
 
 The data in a single row can be present in multiple lines, so the excess '\n' must be replaced with a space so as to regard them a single column after parsing. Carefully observing the pattern ' \n' (single space followed by a new line) is replaced with a single space using *replace()*. Now according to our assumption from text data we will get last column as (Incident ORI\n, OK0140200\n , 14005\n ,EMSSTAT\n) which will be replaced by ((Incident ORI;) ,(OK0140200;) , (14005;) ,(EMSSTAT;)). This implies that to find and split at end of each line '\n' is replaced with ';' as below.
 >*pageObj = 
