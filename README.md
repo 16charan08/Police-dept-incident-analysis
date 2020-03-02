@@ -13,7 +13,7 @@ import re \
 import pytest 
  
 
-#### project0--main.py
+### project0--main.py
 main.py contains all function calls for each functionality \
  **p0.fetchincidents(url) ,incidents = p0.extractincidents() ,db = p0.createdb() ,p0.populatedb(db, incidents) ,p0.status(db)**
 
@@ -21,7 +21,7 @@ After cloning repository, main.py is executed by following command in SSH
 > pipenv run python project0/main.py --incidents url \
 By giving url of certain incident file here it will fetch all incidents and will store in 'normanpd.db' database
 
-#### project0--p0.py
+### project0--p0.py
 The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance.\
 **p0.fetchincidents(url)**
 
