@@ -24,10 +24,10 @@ By giving url of certain incident file here it will fetch all incidents and will
 ### project0--p0.py
 The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance.\
  - **fetchincidents(url)** \
-This function takes arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents. \
+This function takes one arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents. \
 
 - **extractincidents()** \
- This function extracts raw data from pdf and stores in a list for further use.We can split this extraction mainly into 3 steps
+ This function takes no arguments but reads *incidents.pdf* that stored in using fetchincidents(url), extracts raw data from pdf and stores in a list for further use.We can split this extraction mainly into 3 steps
 <br/> \
 **step1:-** \
  With*PyPDF2* data is extracted from *incidents.pdf* with following commands\
@@ -89,4 +89,8 @@ The dbInsert function takes two arguments which are the database name from dbCre
     incident_ori)
                           VALUES(?,?,?,?,?)''', incidents[i])*
   
-  
+
+- **status(db)** \
+ This function takes one argument which is database name from dbCreate to get nature and number of times each nature occured in each pdf respectively.
+ 
+ >*cursor.execute('''select nature,count(nature) from incidents group by nature order by nature''')*
