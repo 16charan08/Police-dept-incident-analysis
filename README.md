@@ -22,5 +22,6 @@ After cloning repository, main.py is executed by following command in SSH
 By giving url of certain incident file here it will fetch all incidents and will store in 'normanpd.db' database
 
 #### project0--p0.py
-The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance. \
+The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance.\
+**p0.fetchincidents(url)**
 
