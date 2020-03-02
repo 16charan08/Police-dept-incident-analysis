@@ -52,6 +52,7 @@ The data in a single row can be present in multiple lines, so the excess '\n' mu
                   replace('14005\n','14005;').replace('EMSSTAT\n','EMSSTAT;').replace(' \n',' ')*
 
 <br/> \
-**step3:-**  \                  
+**step3:-**  \   
+**_Assumptions made in this step are:-_** Missing values will only be noted in *Nature column* , Because in most of the cases Incident loaction , Incident number (given by police), date/time , Incident ORI will be known as they are determined values. But Nature of the incident may not be known because of lack of evidences or withness etc. So, I am assuming only that value misses.
 
 
