@@ -35,6 +35,8 @@ This function takes arugument url which is passed in main function. This url is 
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)* \
  The PdfFileReader function of the PyPDF2 package retrieves the data. The data obtained is not formatted and contains excess data which is   not required.   
  <br/> \
-**step2:-** 
+**step2:-**  \
+**_Assumptions made in this step are_**
+1. *Incident ORI* having only 3 values that are used to detect end of each line(OK0140200,14005,EMSSTAT)
 
 
