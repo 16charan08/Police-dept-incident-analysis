@@ -57,4 +57,12 @@ The data in a single row can be present in multiple lines, so the excess '\n' mu
 
 Text is spilt at ';' and then each row is stored into a list. This list length is checked if it is lessthan 5 then "Null" is inserted at position of list according to our assumptions. 
 
+> *text = pageObj.split(";") \
+        text = text[:-1] \
+        for j in range(0,len(text)): \
+            text[j] = text[j].split("\n") \
+            #print(len(text[j])) \
+            if len(text[j]) == 4: \
+                text[j].insert(3,"Null") \
+            df.append(tuple(text[j]))*
 
