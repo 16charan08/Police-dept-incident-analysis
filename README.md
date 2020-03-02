@@ -42,8 +42,8 @@ After data is extracted using *PdfFileReader()* then each page is read and conve
 > *pageObj = pdfReader.getPage(n).extractText()* 
 
 Every ';' ,'Tilde-','Tilde' are replaced by space(' ') in order to handle latitude and longitude locations. \
-> *pageObj = re.sub(';',' ',pageObj)
-        pageObj = re.sub('Tilde-',' ',pageObj)
+> *pageObj = re.sub(';',' ',pageObj) \
+        pageObj = re.sub('Tilde-',' ',pageObj) \
         pageObj = re.sub('Tilde', ' ', pageObj)*
 
 The data in a single row can be present in multiple lines, so the excess '\n' must be replaced with a space so as to regard them a single column after parsing. Carefully observing the pattern ' \n' (single space followed by a new line) is replaced with a single space using *replace()*. Now according to our assumption from text data we will get last column as (Incident ORI\n, OK0140200\n , 14005\n ,EMSSTAT\n) which will be replaced by ((Incident ORI;) ,(OK0140200;) , (14005;) ,(EMSSTAT;)). This implies that to find and split at end of each line '\n' is replaced with ';' as below.
