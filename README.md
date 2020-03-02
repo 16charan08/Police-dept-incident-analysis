@@ -68,7 +68,7 @@ Text is spilt at ';' and then each row is stored into a list. This list length i
 At last it is appended to list of tuples to maintain order(as tuple preserves order). This this list is retruned for further usages.
 
 - **createdb()** \
-A database is created using the function dbCreate. The database is named normanpd.db and contains one table names incidents. The sqlite3 package documented in 'https://docs.python.org/2/library/sqlite3.html' is used to create a sqlite database. The sqlite3 package opens the connection creating a normanpd.db database file and the cursor and execute functions are used to execute the queries within the database from python. Initially the database is checked for any table named incidents and if found the table is dropped. A table incidents is created using the following create statement.
+A database is created using the function dbCreate. The database is named normanpd.db and contains one table names incidents.The sqlite3 package opens the connection creating a normanpd.db database file and the cursor and execute functions are used to execute the queries within the database from python. Initially the database is checked for any table named incidents and if found the table is dropped. 
 
 >*cursor.execute('''DROP TABLE IF EXISTS incidents''') \
         cursor.execute('''
@@ -78,3 +78,15 @@ A database is created using the function dbCreate. The database is named normanp
             nature TEXT,
             incident_ori TEXT)
             ''')*
+            
+- **populatedb(db, incidents)** \
+The dbInsert function takes two arguments which are the database name from dbCreate function and the incidents data from dataExtract function. This function opens a connection to the database 'normanpd.db' and inserts the rows from the incidents data into the database.
+
+>*cursor.execute('''INSERT INTO incidents(incident_time,
+    incident_number,
+    incident_location,
+    nature,
+    incident_ori)
+                          VALUES(?,?,?,?,?)''', incidents[i])*
+  
+  
