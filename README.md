@@ -50,8 +50,7 @@ The data in a single row can be present in multiple lines, so the excess '\n' mu
 >*pageObj = 
         pageObj = pageObj.replace('OK0140200\n','OK0140200;').replace('Incident ORI\n','Incident ORI;').\
                   replace('14005\n','14005;').replace('EMSSTAT\n','EMSSTAT;').replace(' \n',' ')*
-                  
-                  
+
 <br/> \
 **step3:-**  \                  
 
