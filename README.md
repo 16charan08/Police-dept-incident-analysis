@@ -23,10 +23,10 @@ By giving url of certain incident file here it will fetch all incidents and will
 
 ### project0--p0.py
 The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance.\
- - **p0.fetchincidents(url)** \
+ - **fetchincidents(url)** \
 This function takes arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents. \
 
-- **p0.extractincidents()** \
+- **extractincidents()** \
  This function extracts raw data from pdf and stores in a list for further use.We can split this extraction mainly into 3 steps
 <br/> \
 **step1:-** \
@@ -67,4 +67,14 @@ Text is spilt at ';' and then each row is stored into a list. This list length i
             
 At last it is appended to list of tuples to maintain order(as tuple preserves order). This this list is retruned for further usages.
 
+- **createdb()** \
+A database is created using the function dbCreate. The database is named normanpd.db and contains one table names incidents. The sqlite3 package documented in 'https://docs.python.org/2/library/sqlite3.html' is used to create a sqlite database. The sqlite3 package opens the connection creating a normanpd.db database file and the cursor and execute functions are used to execute the queries within the database from python. Initially the database is checked for any table named incidents and if found the table is dropped. A table incidents is created using the following create statement.
 
+>*cursor.execute('''DROP TABLE IF EXISTS incidents''') \
+        cursor.execute('''
+                CREATE TABLE IF NOT EXISTS incidents(incident_time TEXT,
+            incident_number TEXT,
+            incident_location TEXT,
+            nature TEXT,
+            incident_ori TEXT)
+            ''')*
