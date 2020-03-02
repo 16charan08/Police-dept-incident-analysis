@@ -36,7 +36,10 @@ This function takes arugument url which is passed in main function. This url is 
  The PdfFileReader function of the PyPDF2 package retrieves the data. The data obtained is not formatted and contains excess data which is   not required.   
  <br/> \
 **step2:-**  \
-**_Assumptions made in this step are:-_** *Incident ORI* column having only 3 values that are used to detect end of each line(OK0140200,14005,EMSSTAT). \
-After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.
+**_Assumptions made in this step are:-_** *Incident ORI* column having only 3 values that are used to detect end of each line(*OK0140200,14005,EMSSTAT*). \
+After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.\
+*pageObj = pdfReader.getPage(n).extractText()* \
+
+
 
 
