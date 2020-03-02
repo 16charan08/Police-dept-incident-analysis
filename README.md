@@ -34,7 +34,7 @@ This function takes arugument url which is passed in main function. This url is 
  *pdfFileObj = open('./incidents.pdf', 'rb') \
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)* \
  The PdfFileReader function of the PyPDF2 package retrieves the data. The data obtained is not formatted and contains excess data which is   not required.   
- <br/> 
-**step2:-** \
+ <br/> \
+**step2:-** 
 
 
