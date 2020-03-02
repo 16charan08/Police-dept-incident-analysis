@@ -29,8 +29,9 @@ This function takes arugument url which is passed in main function. This url is 
  This function extracts raw data from pdf and stores in a dataframe for further use.We can split this extraction mainly into 3 steps\
  **step1** \
  With*PyPDF2* data is extracted from *incidents.pdf* with following commands\
- *pdfFileObj = open('../docs/incidents.pdf', 'rb') \
-    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)*
+ *pdfFileObj = open('./incidents.pdf', 'rb') \
+    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)* \
+ The PdfFileReader function of the PyPDF2 package retrieves the data. The data obtained is not formatted and contains excess data which is   not required.   
  
 
 
