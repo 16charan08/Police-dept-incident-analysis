@@ -27,7 +27,7 @@ The p0.py file contains the methods to download PDF, extract data, create a data
 This function takes arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents.
 - **p0.extractincidents()** \
  This function extracts raw data from pdf and stores in a dataframe for further use.We can split this extraction mainly into 3 steps\
-<br/>
+<br/> \
 **step1:-** \
  With*PyPDF2* data is extracted from *incidents.pdf* with following commands\
  *pdfFileObj = open('./incidents.pdf', 'rb') \
