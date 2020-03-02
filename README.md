@@ -27,7 +27,7 @@ The p0.py file contains the methods to download PDF, extract data, create a data
 This function takes arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents. \
 
  **p0.extractincidents()** \
- This function extracts raw data from pdf and stores in a dataframe for further use.We can split this extraction mainly into 3 steps
+ This function extracts raw data from pdf and stores in a list for further use.We can split this extraction mainly into 3 steps
 <br/> \
 **step1:-** \
  With*PyPDF2* data is extracted from *incidents.pdf* with following commands\
@@ -61,8 +61,10 @@ Text is spilt at ';' and then each row is stored into a list. This list length i
         text = text[:-1] \
         for j in range(0,len(text)): \
             text[j] = text[j].split("\n") \
-            #print(len(text[j])) \
             if len(text[j]) == 4: \
                 text[j].insert(3,"Null") \
             df.append(tuple(text[j]))*
+            
+At last it is appended to list of tuples to maintain order(as tuple preserves order). This this list is retruned for further usages.
+
 
