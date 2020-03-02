@@ -41,6 +41,6 @@ This function takes arugument url which is passed in main function. This url is 
 After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.\
 > *pageObj = pdfReader.getPage(n).extractText()* 
 
-The data in a single row can be present in multiple lines, so the excess '\n' must be replaced with a space so as to regard them a single column after parsing. Carefully observing the pattern ' \n' (single space followed by a new line) is replaced with a single space using *replace()*. Now according to our assumption from text data we will get last column as *Incident ORI\n, OK0140200'\n' , 14005'\n' ,EMSSTAT'\n'* which will be replaced by *(Incident ORI;) ,(OK0140200;) , (14005;) ,(EMSSTAT;)*
+The data in a single row can be present in multiple lines, so the excess '\n' must be replaced with a space so as to regard them a single column after parsing. Carefully observing the pattern ' \n' (single space followed by a new line) is replaced with a single space using *replace()*. Now according to our assumption from text data we will get last column as (Incident ORI\n, OK0140200\n , 14005\n ,EMSSTAT\n) which will be replaced by ((Incident ORI;) ,(OK0140200;) , (14005;) ,(EMSSTAT;))
 
 
