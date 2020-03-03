@@ -8,6 +8,7 @@ Screenshot of tree here
 pipenv install PyPDF2 &nbsp; \
 pipenv install pandas &nbsp; \
 pipenv install wget &nbsp;\
+pipenv install pytest &nbsp;\
 import sqlite3 \
 import re \
 import pytest 
