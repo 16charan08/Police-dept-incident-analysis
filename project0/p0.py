@@ -45,7 +45,7 @@ def extractincidents():
     return df
 
 def createdb():
-        try:
+    try:
         sqlite3.connect(':memory:')
         database = 'normanpd.db'
         db = sqlite3.connect(database)
