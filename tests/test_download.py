@@ -26,7 +26,7 @@ def test_data_inserted():
     p0.populatedb(dname,a)
     sql = sqlite3.connect(database)
     cursor = sql.cursor()
-    cursor.execute('select * from incidents')
+    cursor.execute('''select * from incidents''')
     assert cursor.fetchall() is not None
     sql.close()
 
