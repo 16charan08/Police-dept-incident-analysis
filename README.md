@@ -104,19 +104,36 @@ The test_a11.py file contains the test cases designed to test the functioning of
 - **test_fetchincidents** \
 This function test *fetchincidents(url)* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that *incidents.pdf* is exsisted or not as follows. 
 >*assert open('../docs/incidents.pdf', 'rb') is not None* \
+
 If file exists test case will be passed ,if not exists it will be failed. 
 
 - **test_extractincidents()** \
-This function test *extractincidents* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that the data from *incidents.pdf* extraced or not and inserted into a list as follows.
+This function test *extractincidents()* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that the data from *incidents.pdf* extraced or not and inserted into a list as follows.
 > *a = p0.extractincidents() \
     assert len(a)>1* \
-    If list is created and has lenght more than 1 test case passes , if not fails.
+
+If list is created and has lenght more than 1 test case passes , if not fails.
 
 - **test_dbcreated()** \
-This function tests if database created as follows.
+This function test *createdb()* from p0.py, if database created as follows.
 > *dname = p0.createdb() \
     assert dname == database* \
+
+In createdb()* from p0.py we are returning a string that names 'normanpd.db', so in for test function we are checking that names are same or not. If thet are same test case pases else fails.
+
+- **test_data_inserted()** \
+This function test *populatedb(db, incidents)* from p0.py. So will be creating a db using *createdb()* and incidents using *extractincidents()* and insert data into table using populatedb(db, incidents). After inserting we will test it as follows.
+
+>*dname = p0.createdb() \
+    a = p0.extractincidents() \
+    p0.populatedb(dname,a) \
+    sql = sqlite3.connect(database) \
+    cursor = sql.cursor() \
+    cursor.execute('select * from incidents') \
+    assert cursor.fetchall() is not None* \
     
-    
+If table as any incidents test case pases else fails.
+
+
     
     
