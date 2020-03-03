@@ -22,26 +22,26 @@ After cloning repository, main.py is executed by following command in SSH
 By giving url of certain incident file here it will fetch all incidents and will store in 'normanpd.db' database
 
 ### project0--p0.py
-The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance.\
+The p0.py file contains the methods to download PDF, extract data, create a database, insert data into database and retrieve nature of incidents by its occurance.
  - **fetchincidents(url)** \
-This function takes one arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents. \
+This function takes one arugument url which is passed in main function. This url is used to download data using *wget.download(url)* to our local directory with name *incidents.pdf*. If file is already exsisted it will remove it and always create only one *incidents.pdf*, it is later on used in further investigation of our incidents. 
 
 - **extractincidents()** \
  This function takes no arguments but reads *incidents.pdf* that stored in using fetchincidents(url), extracts raw data from pdf and stores in a list for further use.We can split this extraction mainly into 3 steps
 <br/> \
 **step1:-** \
- With*PyPDF2* data is extracted from *incidents.pdf* with following commands\
+ With *PyPDF2* data is extracted from *incidents.pdf* with following commands
  > *pdfFileObj = open('./incidents.pdf', 'rb') \
     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)* 
     
  The PdfFileReader function of the PyPDF2 package retrieves the data. The data obtained is not formatted and contains excess data which is   not required.   
  <br/> \
 **step2:-**  \
-**_Assumptions made in this step are:-_** *Incident ORI* column having only 3 values that are used to detect end of each line(*OK0140200,14005,EMSSTAT*). \
+**_Assumptions made in this step are:-_** *Incident ORI* column having only 3 values that are used to detect end of each line(*OK0140200,14005,EMSSTAT*). 
 After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.\
 > *pageObj = pdfReader.getPage(n).extractText()* 
 
-Every ';' ,'Tilde-','Tilde' are replaced by space(' ') in order to handle latitude and longitude locations. \
+Every ';' ,'Tilde-','Tilde' are replaced by space(' ') in order to handle latitude and longitude locations. 
 > *pageObj = re.sub(';',' ',pageObj) \
         pageObj = re.sub('Tilde-',' ',pageObj) \
         pageObj = re.sub('Tilde', ' ', pageObj)*
@@ -52,8 +52,8 @@ The data in a single row can be present in multiple lines, so the excess '\n' mu
                   replace('14005\n','14005;').replace('EMSSTAT\n','EMSSTAT;').replace(' \n',' ')*
 
 <br/> \
-**step3:-**  \   
-**_Assumptions made in this step are:-_** Missing values will only be noted in *Nature column* , Because in most of the cases Incident loaction , Incident number (given by police), date/time , Incident ORI will be known as they are determined values. But Nature of the incident may not be known because of lack of evidences or withness etc. So, I am assuming only that value misses. \
+**step3:-**     
+**_Assumptions made in this step are:-_** Missing values will only be noted in *Nature column* , Because in most of the cases Incident loaction , Incident number (given by police), date/time , Incident ORI will be known as they are determined values. But Nature of the incident may not be known because of lack of evidences or withness etc. So, I am assuming only that value misses. 
 
 Text is spilt at ';' and then each row is stored into a list. This list length is checked if it is lessthan 5 then "Null" is inserted at position of list according to our assumptions. 
 
@@ -103,21 +103,21 @@ The test_a11.py file contains the test cases designed to test the functioning of
 
 - **test_fetchincidents** \
 This function test *fetchincidents(url)* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that *incidents.pdf* is exsisted or not as follows. 
->*assert open('../docs/incidents.pdf', 'rb') is not None* \
+>*assert open('../docs/incidents.pdf', 'rb') is not None* 
 
 If file exists test case will be passed ,if not exists it will be failed. 
 
 - **test_extractincidents()** \
 This function test *extractincidents()* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that the data from *incidents.pdf* extraced or not and inserted into a list as follows.
 > *a = p0.extractincidents() \
-    assert len(a)>1* \
+    assert len(a)>1* 
 
 If list is created and has lenght more than 1 test case passes , if not fails.
 
 - **test_dbcreated()** \
 This function test *createdb()* from p0.py, if database created as follows.
 > *dname = p0.createdb() \
-    assert dname == database* \
+    assert dname == database* 
 
 In createdb()* from p0.py we are returning a string that names 'normanpd.db', so in for test function we are checking that names are same or not. If thet are same test case pases else fails.
 
@@ -130,7 +130,7 @@ This function test *populatedb(db, incidents)* from p0.py. So will be creating a
     sql = sqlite3.connect(database) \
     cursor = sql.cursor() \
     cursor.execute('select * from incidents') \
-    assert cursor.fetchall() is not None* \
+    assert cursor.fetchall() is not None* 
     
 If table as any incidents test case pases else fails.
 
@@ -144,7 +144,7 @@ This function test *status(db)* from p0.py. So here database is created using *c
     sql = sqlite3.connect(database) \
     cursor = sql.cursor() \
     cursor.execute('''select nature,count(nature) from incidents group by nature order by nature''') \
-    assert cursor.fetchall() is not None* \
+    assert cursor.fetchall() is not None* 
 
 So if nature, count(nature) are extracted then test case passes else fails.
 
