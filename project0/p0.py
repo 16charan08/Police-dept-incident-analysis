@@ -82,7 +82,7 @@ def status(db):
     cursor.execute('''select nature,count(nature) from incidents group by nature''')
     for row in cursor.fetchall():
         print(row[0] + '|' , row[1])
-    return
+    return cursor.fetchall()
 
 
 
