@@ -134,6 +134,22 @@ This function test *populatedb(db, incidents)* from p0.py. So will be creating a
     
 If table as any incidents test case pases else fails.
 
+- **test_status** \
+This function test *status(db)* from p0.py. So here database is created using *createdb()*, incidents are extracted using *extractincidents()*, values are inserted using *populatedb(db, incidents)* and then *status(db)* is tested if its empty or not.
 
+>* dname = p0.createdb() \
+    a = p0.extractincidents() \
+    p0.populatedb(dname, a) \
+    p0.status(dname) \
+    sql = sqlite3.connect(database) \
+    cursor = sql.cursor() \
+    cursor.execute('''select nature,count(nature) from incidents group by nature order by nature''') \
+    assert cursor.fetchall() is not None* \
+
+So if nature, count(nature) are extracted then test case passes else fails.
+
+Test functions are test using only by navigating to certain folder:
+>*pytest*
+    
     
     
