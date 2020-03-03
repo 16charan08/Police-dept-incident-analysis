@@ -137,7 +137,7 @@ If table as any incidents test case pases else fails.
 - **test_status** \
 This function test *status(db)* from p0.py. So here database is created using *createdb()*, incidents are extracted using *extractincidents()*, values are inserted using *populatedb(db, incidents)* and then *status(db)* is tested if its empty or not.
 
->* dname = p0.createdb() \
+>*dname = p0.createdb() \
     a = p0.extractincidents() \
     p0.populatedb(dname, a) \
     p0.status(dname) \
