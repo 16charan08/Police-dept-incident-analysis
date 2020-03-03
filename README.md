@@ -38,7 +38,7 @@ This function takes one arugument url which is passed in main function. This url
  <br/> \
 **step2:-**  \
 **_Assumptions made in this step are:-_** *Incident ORI* column having only 3 values that are used to detect end of each line(*OK0140200,14005,EMSSTAT*). 
-After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.\
+After data is extracted using *PdfFileReader()* then each page is read and converted to text using *getPage(n) and extractText()* respectively.
 > *pageObj = pdfReader.getPage(n).extractText()* 
 
 Every ';' ,'Tilde-','Tilde' are replaced by space(' ') in order to handle latitude and longitude locations. 
