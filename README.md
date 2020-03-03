@@ -112,8 +112,11 @@ This function test *extractincidents* from p0.py .As file named *incidents.pdf* 
     assert len(a)>1* \
     If list is created and has lenght more than 1 test case passes , if not fails.
 
-_ **test_dbcreated()** \
-
+- **test_dbcreated()** \
+This function tests if database created as follows.
+> *dname = p0.createdb() \
+    assert dname == database* \
+    
     
     
     
