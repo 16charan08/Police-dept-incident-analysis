@@ -103,7 +103,10 @@ The test_a11.py file contains the test cases designed to test the functioning of
 
 - **test_fetchincidents** \
 This function test *fetchincidents(url)* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that *incidents.pdf* is exsisted or not as follows. 
->*assert open('../docs/incidents.pdf', 'rb') is not None*
+>*assert open('../docs/incidents.pdf', 'rb') is not None* \
 If file exists test case will be passed ,if not exists it will be failed. 
 
 - **test_extractincidents()** \
+This function test *extractincidents* from p0.py .As file named *incidents.pdf* is created in local folder ,in this function it will be tested if that the data from *incidents.pdf* extraced or not and inserted into a list as follows.
+> *a = p0.extractincidents() \
+    assert len(a)>1* \
