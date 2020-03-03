@@ -45,9 +45,10 @@ def extractincidents():
     return df
 
 def createdb():
-    try:
+        try:
         sqlite3.connect(':memory:')
-        db = sqlite3.connect('normanpd.db')
+        database = 'normanpd.db'
+        db = sqlite3.connect(database)
         cursor = db.cursor()
         cursor.execute('''DROP TABLE IF EXISTS incidents''')
         cursor.execute('''
@@ -58,9 +59,9 @@ def createdb():
             incident_ori TEXT)
             ''')
         db.commit()
+        return database
     except Error as e:
         print(e)
-    return db
 
 def populatedb(db, incidents):
     cursor = db.cursor()
