@@ -111,5 +111,9 @@ This function test *extractincidents* from p0.py .As file named *incidents.pdf* 
 > *a = p0.extractincidents() \
     assert len(a)>1* \
     If list is created and has lenght more than 1 test case passes , if not fails.
+
+_ **test_dbcreated()** \
+
+    
     
     
