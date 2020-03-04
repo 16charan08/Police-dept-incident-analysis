@@ -57,6 +57,8 @@ The data in a single row can be present in multiple lines, so the excess '\n' mu
 
 Text is spilt at ';' and then each row is stored into a list. This list length is checked if it is lessthan 5 then "Null" is inserted at position of list according to our assumptions. 
 
+**_Exception_:-** In this assumption if I have one missing value of nature code will handle it , If that one missing value is with some other column it cannot handle.
+
 > *text = pageObj.split(";") \
         text = text[:-1] \
         for j in range(0,len(text)): \
