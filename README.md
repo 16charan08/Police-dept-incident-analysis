@@ -171,7 +171,7 @@ So if nature, count(nature) are extracted then test case passes else fails.
 ### Execution
 - To get project folder:- 
 
-- git clone https://github.com/16charan08/cs5293p19-project0.git
+> git clone https://github.com/16charan08/cs5293p19-project0.git
 
 - For results:- 
 run below command in command line.
