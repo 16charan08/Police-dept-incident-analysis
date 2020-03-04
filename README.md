@@ -8,6 +8,9 @@ pipenv install PyPDF2 &nbsp; \
 pipenv install pandas &nbsp; \
 pipenv install wget &nbsp;\
 pipenv install pytest &nbsp;\
+pip install PyPDF2 \
+pip install pandas \
+pip install wget \
 import sqlite3 \
 import re \
 import pytest 
@@ -164,10 +167,12 @@ So if nature, count(nature) are extracted then test case passes else fails.
 
 ### Execution
 - For results:- 
+run below command in command line.
 
->*pipenv run python project0/main.py --incidents <url>* 
+>*pipenv run python project0/main.py --incidents -enter url here* 
 
 - For test Cases:- 
+ run below command in command line.
  
 >*pytest*
 
