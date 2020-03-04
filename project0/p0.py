@@ -39,6 +39,18 @@ def extractincidents():
             text[j] = text[j].split("\n")
             if len(text[j]) == 4:
                 text[j].insert(3,"Null")
+            elif len(text[j]) == 3:
+                text[j].insert(2, "Null")
+                text[j].insert(3, "Null")
+            elif len(text[j]) == 2:
+                text[j].insert(2, "Null")
+                text[j].insert(3, "Null")
+                text[j].insert(4, "Null")
+            elif len(text[j]) == 1:
+                text[j].insert(2, "Null")
+                text[j].insert(3, "Null")
+                text[j].insert(4, "Null")
+                text[j].insert(5, "Null")    
             df.append(tuple(text[j]))
     print(len(df))
    # print(df)
