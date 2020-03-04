@@ -7,6 +7,7 @@ In this project a PDF file is downloaded from the Norman Police Deparatment and 
 ### Structure
 ![Image description](tree.png)
 ### Packages installed/used 
+pip install pipenv \
 pipenv install PyPDF2 &nbsp; \
 pipenv install pandas &nbsp; \
 pipenv install wget &nbsp;\
@@ -170,6 +171,7 @@ So if nature, count(nature) are extracted then test case passes else fails.
 
 ### Execution
 - To get project folder:- 
+> Run install pipenv
 
 > git clone https://github.com/16charan08/cs5293p19-project0.git
 
