@@ -60,21 +60,21 @@ Text is spilt at ';' and then each row is stored into a list. This list length i
 > *text = pageObj.split(";") \
         text = text[:-1] \
         for j in range(0,len(text)): \
-            text[j] = text[j].split("\n") \
-            if len(text[j]) == 4: \
-                text[j].insert(3,"Null") \
-             elif len(text[j]) == 3: \
-                text[j].insert(2, "Null") \
-                text[j].insert(3, "Null") \
-            elif len(text[j]) == 2: \
-                text[j].insert(2, "Null") \
-                text[j].insert(3, "Null") \
-                text[j].insert(4, "Null") \
-            elif len(text[j]) == 1: \
-                text[j].insert(2, "Null") \
-                text[j].insert(3, "Null") \
-                text[j].insert(4, "Null") \
-                text[j].insert(5, "Null") \
+        &nbsp;    text[j] = text[j].split("\n") \
+         &nbsp;   if len(text[j]) == 4: \
+            &nbsp;&nbsp;    text[j].insert(3,"Null") \
+          &nbsp;   elif len(text[j]) == 3: \
+           &nbsp;&nbsp;     text[j].insert(2, "Null") \
+            &nbsp;&nbsp;    text[j].insert(3, "Null") \
+          &nbsp;  elif len(text[j]) == 2: \
+           &nbsp;&nbsp;     text[j].insert(2, "Null") \
+           &nbsp;&nbsp;     text[j].insert(3, "Null") \
+           &nbsp;&nbsp;    text[j].insert(4, "Null") \
+          &nbsp;  elif len(text[j]) == 1: \
+           &nbsp;&nbsp;     text[j].insert(2, "Null") \
+           &nbsp;&nbsp;     text[j].insert(3, "Null") \
+           &nbsp;&nbsp;     text[j].insert(4, "Null") \
+           &nbsp;&nbsp;     text[j].insert(5, "Null") \
             df.append(tuple(text[j]))*
             
 At last it is appended to list of tuples to maintain order(as tuple preserves order). This this list is retruned for further usages.
