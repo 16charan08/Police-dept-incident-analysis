@@ -63,6 +63,18 @@ Text is spilt at ';' and then each row is stored into a list. This list length i
             text[j] = text[j].split("\n") \
             if len(text[j]) == 4: \
                 text[j].insert(3,"Null") \
+             elif len(text[j]) == 3: \
+                text[j].insert(2, "Null") \
+                text[j].insert(3, "Null") \
+            elif len(text[j]) == 2: \
+                text[j].insert(2, "Null") \
+                text[j].insert(3, "Null") \
+                text[j].insert(4, "Null") \
+            elif len(text[j]) == 1: \
+                text[j].insert(2, "Null") \
+                text[j].insert(3, "Null") \
+                text[j].insert(4, "Null") \
+                text[j].insert(5, "Null") \
             df.append(tuple(text[j]))*
             
 At last it is appended to list of tuples to maintain order(as tuple preserves order). This this list is retruned for further usages.
