@@ -2,29 +2,6 @@
 In this project a PDF file is downloaded from the Norman Police Deparatment and the data regarding the incidents is inserted into a SQLite database named 'normanpd.db'. The downloaded PDF file contains the incidents reports in the Norman area. The PDF file is cleaned using python and the data is formatted into the form of rows. A random row can be retrieved from the database after inserting the rows into the database.
 
 ### Structure
-.
-├── COLLABORATORS
-├── LICENSE
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-├── incidents.pdf
-├── normanpd.db
-├── project0
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-38.pyc
-│   │   └── p0.cpython-38.pyc
-│   ├── main.py
-│   └── p0.py
-├── setup.cfg
-├── setup.py
-└── tests
-    ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-38.pyc
-    │   └── test_all.cpython-38-pytest-5.3.5.pyc
-    └── test_all.py
 
 ### Packages installed/used 
 pipenv install PyPDF2 &nbsp; \
