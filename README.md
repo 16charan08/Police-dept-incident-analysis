@@ -151,13 +151,14 @@ So if nature, count(nature) are extracted then test case passes else fails.
 ### Execution
 - For results:- 
 
->*pipenv run python project0/main.py --incidents <url>* \
+>*pipenv run python project0/main.py --incidents <url>* 
 
 - For test Cases:- 
  
 >*pytest*
 
 This will fetch will all test cases are passed or not.
+
     
     
     
