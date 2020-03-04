@@ -148,8 +148,14 @@ This function test *status(db)* from p0.py. So here database is created using *c
 
 So if nature, count(nature) are extracted then test case passes else fails.
 
-Test functions are test using only by navigating to certain folder:
+### Execution
+- For results:- \
+>*pipenv run python project0/main.py --incidents <url>* \
+
+-For test Cases:- \
+ 
 >*pytest*
+This will fetch will all test cases are passed or not.
     
     
     
