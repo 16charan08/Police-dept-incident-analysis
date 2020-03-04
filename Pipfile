@@ -6,11 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+pypdf2 = "*"
 pandas = "*"
 wget = "*"
-pypdf2 = "*"
-sqlite3 = "*"
-re = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"

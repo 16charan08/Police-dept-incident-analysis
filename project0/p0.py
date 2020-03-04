@@ -64,7 +64,8 @@ def createdb():
         print(e)
 
 def populatedb(db, incidents):
-    cursor = db.cursor()
+    dbase = sqlite3.connect(db)
+    cursor = dbase.cursor()
     #print(incidents[2][0])
     for i in range(1,len(incidents)):
         cursor.execute('''INSERT INTO incidents(incident_time,
@@ -73,13 +74,14 @@ def populatedb(db, incidents):
     nature,
     incident_ori)
                           VALUES(?,?,?,?,?)''', incidents[i])
-    db.commit()
+    dbase.commit()
     cursor.execute('''select * from incidents''')
    # print(cursor.fetchall())
 
 
 def status(db):
-    cursor = db.cursor()
+    dbase = sqlite3.connect(db)
+    cursor = dbase.cursor()
     cursor.execute('''select nature,count(nature) from incidents group by nature''')
     for row in cursor.fetchall():
         print(row[0] + '|' , row[1])
