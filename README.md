@@ -1,5 +1,8 @@
 # cs5293p19-project0
 In this project a PDF file is downloaded from the Norman Police Deparatment and the data regarding the incidents is inserted into a SQLite database named 'normanpd.db'. The downloaded PDF file contains the incidents reports in the Norman area. The PDF file is cleaned using python and the data is formatted into the form of rows. A random row can be retrieved from the database after inserting the rows into the database.
+### Author :- Ram charan Reddy Kankanala
+### Email :- Ramcharankankanala@gmail.com
+
 
 ### Structure
 ![Image description](tree.png)
@@ -166,6 +169,10 @@ This function test *status(db)* from p0.py. So here database is created using *c
 So if nature, count(nature) are extracted then test case passes else fails.
 
 ### Execution
+- To get project folder:- 
+
+- git clone https://github.com/16charan08/cs5293p19-project0.git
+
 - For results:- 
 run below command in command line.
 
